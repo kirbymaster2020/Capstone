@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
 
+        Debug.Log("Hello: " + gameObject.name);
         SceneManager.LoadSceneAsync(1);
 
     }

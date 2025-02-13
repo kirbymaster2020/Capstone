@@ -969,6 +969,8 @@ GameObject:
   - component: {fileID: 1875094372}
   - component: {fileID: 1875094373}
   - component: {fileID: 1875094374}
+  - component: {fileID: 1875094376}
+  - component: {fileID: 1875094375}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1126,6 +1128,55 @@ MonoBehaviour:
   LaunchPoint: {fileID: 1092233228}
   arrowPrefab: {fileID: 7022026458752447818, guid: 1512eb1ddd699684bba40f20c43cecc1, type: 3}
   bowCooldown: 0.5
+--- !u!114 &1875094375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875094368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25728c73f0bfb554dafb7cfe42aa77e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 0
+--- !u!70 &1875094376
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875094368}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 1.0625}
+  m_Direction: 0
 --- !u!1 &1903659864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,8 +1188,8 @@ GameObject:
   - component: {fileID: 1903659869}
   - component: {fileID: 1903659868}
   - component: {fileID: 1903659867}
-  - component: {fileID: 1903659866}
   - component: {fileID: 1903659865}
+  - component: {fileID: 1903659870}
   m_Layer: 0
   m_Name: Dummy
   m_TagString: Untagged
@@ -1173,24 +1224,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1903659866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903659864}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60f3fc6b1aef5d54fa5d22f3ee0933cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveSpeed: 5
-  rb: {fileID: 1903659865}
-  animator: {fileID: 1903659867}
-  dashSpeed: 0
-  dashLength: 0.5
-  dashCooldown: 1
 --- !u!95 &1903659867
 Animator:
   serializedVersion: 5
@@ -1253,7 +1286,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3531094723254082572, guid: dcc57dfaec2ca4e47a31bce9f5559aa3, type: 3}
+  m_Sprite: {fileID: -8312987823639654255, guid: ae5d82da333267d4c84306f23f01b665, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1279,6 +1312,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1903659870
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903659864}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 0.6875}
+  m_Direction: 0
 --- !u!1 &1912241268
 GameObject:
   m_ObjectHideFlags: 0
