@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     {
 
         Debug.Log("Hello: " + gameObject.name);
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadScene(1);
 
     }
     public void CloseGame()
