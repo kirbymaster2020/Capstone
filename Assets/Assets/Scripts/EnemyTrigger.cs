@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDamage : MonoBehaviour
+public class EnemyTrigger : MonoBehaviour
 {
     public EnemyHealth enemyHealth;
 
@@ -22,9 +22,10 @@ public class PlayerDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Arrow")
         {
-            enemyHealth.takeDamage(damage);
+            Debug.Log("Enemy Hit.");
+            //EnemyHealth.takeDamage(damage);
 
         }
 

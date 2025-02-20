@@ -7,9 +7,11 @@ public class Arrow : MonoBehaviour
 {
 
     public Rigidbody2D rb;
-    public Vector2 direction = Vector2.right;
+    public Vector2 direction = Vector2.down;
+    public EnemyHealth enemyHealth;
     public float lifespan = 2;
     public float speed;
+    public int damage = 2;
 
     //Called before first frame update
     void Start()
@@ -27,5 +29,17 @@ public class Arrow : MonoBehaviour
 
     }
 
-  
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Arrow Hit.");
+            Destroy(gameObject);
+           // EnemyHealth.takeDamage(damage);
+
+        }
+
+    }
+
+
 }
