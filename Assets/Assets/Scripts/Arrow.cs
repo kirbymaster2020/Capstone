@@ -33,9 +33,8 @@ public class Arrow : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Arrow Hit.");
-            Destroy(gameObject);
-           // EnemyHealth.takeDamage(damage);
+            Debug.Log(gameObject + " has hit " + collision.gameObject.tag + " for " + damage + " damage.");
+            Destroy(gameObject); 
 
         }
 

@@ -48,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
+                Debug.Log("Dash On Cooldown...");
+
             }
 
         }
@@ -60,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 activeMoveSpeed = MoveSpeed;
                 dashCooldownCounter = dashCooldown;
+                Debug.Log("Dash Refreshed.");
+
             }
         }
 

@@ -102,8 +102,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 363220331679511943}
   direction: {x: 1, y: 0}
+  enemyHealth: {fileID: 0}
   lifespan: 2
   speed: 8
+  damage: 2
 --- !u!50 &363220331679511943
 Rigidbody2D:
   serializedVersion: 4
@@ -183,7 +185,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7022026458752447818}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc0a8986cc112d849a1b2d3237d61ae8, type: 3}
   m_Name: 

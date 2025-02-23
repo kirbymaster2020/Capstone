@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     public EnemyHealth enemyHealth;
 
+
     public int damage = 2;
 
     // Start is called before the first frame update
@@ -24,7 +25,12 @@ public class PlayerAttack : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            enemyHealth.takeDamage(damage);
+            //enemyHealth.takeDamage(damage);
+            //Debug.Log(collision.gameObject.tag + " Has taken " + damage + " damage from " + gameObject + "'s attack.");
+
+
+
+
 
         }
 

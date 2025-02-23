@@ -24,8 +24,9 @@ public class EnemyTrigger : MonoBehaviour
     {
         if (collision.gameObject.tag == "Arrow")
         {
-            Debug.Log("Enemy Hit.");
-            //EnemyHealth.takeDamage(damage);
+            Debug.Log(gameObject + " hit by " + collision.gameObject.tag + " for " + damage + " damage.");
+            enemyHealth.takeDamage(damage);
+          
 
         }
 
