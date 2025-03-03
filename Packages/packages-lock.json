@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.seanba.super-tiled2unity": {
-      "version": "file:C:/Users/ayomi/Downloads/New folder",
+      "version": "file:../supertiled2unity",
       "depth": 0,
       "source": "local",
       "dependencies": {
