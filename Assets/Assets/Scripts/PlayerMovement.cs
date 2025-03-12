@@ -10,6 +10,10 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
+    private Vector2 input;
+
+    private Vector2 lastMoveDirection;
+
     private float activeMoveSpeed;
     public float dashSpeed;
     public float dashLength = 0.5f, dashCooldown = 1.0f;
@@ -19,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         activeMoveSpeed = MoveSpeed;
+        animator.GetComponent<Animator>();
 
             
     }
@@ -27,13 +32,28 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+
+        if ((moveX == 0 && moveY == 0) && (input.x != 0 || input.y != 0))
+        {
+            lastMoveDirection = input;
+        }
+
+
         //input goes here
-       movement.x = Input.GetAxisRaw("Horizontal");
-       movement.y = Input.GetAxisRaw("Vertical");
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        animator.SetFloat("MoveX", input.x);
+        animator.SetFloat("MoveY", input.y);
+        animator.SetFloat("MoveMagnitude", input.magnitude);
+        animator.SetFloat("LastMoveX", lastMoveDirection.x);
+        animator.SetFloat("LastMoveY", lastMoveDirection.y);
 
     }
 

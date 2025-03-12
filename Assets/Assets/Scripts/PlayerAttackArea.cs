@@ -13,6 +13,8 @@ public class PlayerAttackArea : MonoBehaviour
         {
             EnemyHealth health = collision.GetComponent<EnemyHealth>();
             health.takeDamage(damage);
+            Debug.Log(collision.gameObject.tag + " Has taken " + damage + " damage from " + gameObject + "'s attack.");
+
         }
 
     }
