@@ -9,24 +9,24 @@ public class PlayerBow : MonoBehaviour
     public Transform LaunchPoint;
     public GameObject arrowPrefab;
     private Vector2 AimDirection = Vector2.right;
-
     public float bowCooldown = 0.5f;
     private float shootTimer;
 
+    // Add reference to inventory
+    [SerializeField] private Inventory inventory;
 
-
-    // Update is called once per frame
     void Update()
     {
-
         shootTimer -= Time.deltaTime;
-
         HandleAiming();
 
         if (Input.GetButtonDown("Shoot") && shootTimer <= 0)
         {
-        Shoot();
-            
+            // Only shoot if we have arrows
+            if (inventory != null && inventory.ArrowCount > 0)
+            {
+                Shoot();
+            }
         }
     }
 
@@ -43,9 +43,14 @@ public class PlayerBow : MonoBehaviour
 
     public void Shoot()
     {
-       Arrow arrow = Instantiate(arrowPrefab, LaunchPoint.position, Quaternion.identity).GetComponent<Arrow>();
+        Arrow arrow = Instantiate(arrowPrefab, LaunchPoint.position, Quaternion.identity).GetComponent<Arrow>();
         arrow.direction = AimDirection;
         shootTimer = bowCooldown;
+
+        // Deduct arrow from inventory
+        if (inventory != null)
+        {
+            inventory.UseArrow();
+        }
     }
 }
-
