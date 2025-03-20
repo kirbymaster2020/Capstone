@@ -25,15 +25,21 @@ public class PlayerMovement : MonoBehaviour
         activeMoveSpeed = MoveSpeed;
         animator.GetComponent<Animator>();
 
+
             
     }
 
 
     // Update is called once per frame
+
+    public float moveXAttack;
+    public float moveYAttack;
     void Update()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+       float moveX = Input.GetAxisRaw("Horizontal");
+       float moveY = Input.GetAxisRaw("Vertical");
+        moveXAttack = moveX;
+        moveYAttack = moveY;
 
         if ((moveX == 0 && moveY == 0) && (input.x != 0 || input.y != 0))
         {

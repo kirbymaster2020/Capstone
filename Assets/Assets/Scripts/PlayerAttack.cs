@@ -8,6 +8,8 @@ public class PlayerAttack : MonoBehaviour
 
     private bool isAttacking = false;
 
+   
+
     public Animator animator;
 
     public EnemyHealth enemyHealth;
@@ -54,12 +56,23 @@ public class PlayerAttack : MonoBehaviour
       
 
     }
-
+    private bool IsAttackUp;
+    private bool IsAttackDown;
+    private bool IsAttackLeft;
+    private bool IsAttackRight;
+    public PlayerMovement playerMovementScript;
     private void Attack()
     {
+
+
         isAttacking = true;
         attackArea.SetActive(isAttacking);
         animator.SetBool("IsAttacking", true);
+        if (Input.GetAxisRaw("Horizontal") >= 0)
+        {
+            //animator.StopPlayback();
+            //animator.Play("AttackRight");
+        }
         Debug.Log(gameObject + "Activated.");
 
     }
