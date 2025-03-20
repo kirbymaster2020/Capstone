@@ -15,14 +15,17 @@ public class PlayerAttack : MonoBehaviour
     private float timeToAttack = 0.5f;
     private float timer = 0.0f;
 
-
     public int damage = 2;
+
+    [Header("Sound Settings")]
+    [SerializeField] private AudioClip attackSound;
+    [SerializeField] private float attackVolume = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
         attackArea = transform.GetChild(1).gameObject;
-        
+
     }
 
     // Update is called once per frame
@@ -38,8 +41,8 @@ public class PlayerAttack : MonoBehaviour
         if (isAttacking == true)
         {
             timer += Time.deltaTime;
-                if (timer >= timeToAttack) 
-                { 
+            if (timer >= timeToAttack)
+            {
 
                 timer = 0.0f;
                 isAttacking = false;
@@ -47,11 +50,11 @@ public class PlayerAttack : MonoBehaviour
                 animator.SetBool("IsAttacking", false);
                 Debug.Log(gameObject + " Deactivated.");
 
-                }
-            
+            }
+
         }
 
-      
+
 
     }
 
@@ -62,7 +65,13 @@ public class PlayerAttack : MonoBehaviour
         animator.SetBool("IsAttacking", true);
         Debug.Log(gameObject + "Activated.");
 
+        // Play attack sound at player position
+        if (attackSound != null)
+        {
+            AudioSource.PlayClipAtPoint(attackSound, transform.position, attackVolume);
+        }
     }
+}
 
     //private void OnCollisionEnter2D(Collision2D collision)
     //{
@@ -70,12 +79,3 @@ public class PlayerAttack : MonoBehaviour
     //    {
     //        //enemyHealth.takeDamage(damage);
     //        //Debug.Log(collision.gameObject.tag + " Has taken " + damage + " damage from " + gameObject + "'s attack.");
-
-
-
-
-
-    //    }
-
-    //}
-}

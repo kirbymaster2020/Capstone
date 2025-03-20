@@ -12,6 +12,10 @@ public class PlayerBow : MonoBehaviour
     public float bowCooldown = 0.5f;
     private float shootTimer;
 
+    [Header("Sound Settings")]
+    [SerializeField] private AudioClip arrowFireSound;
+    [SerializeField] private float fireSoundVolume = 1f;
+
     // Add reference to inventory
     [SerializeField] private Inventory inventory;
 
@@ -46,6 +50,11 @@ public class PlayerBow : MonoBehaviour
         Arrow arrow = Instantiate(arrowPrefab, LaunchPoint.position, Quaternion.identity).GetComponent<Arrow>();
         arrow.direction = AimDirection;
         shootTimer = bowCooldown;
+
+        if (arrowFireSound != null)
+        {
+            AudioSource.PlayClipAtPoint(arrowFireSound, transform.position, fireSoundVolume);
+        }
 
         // Deduct arrow from inventory
         if (inventory != null)

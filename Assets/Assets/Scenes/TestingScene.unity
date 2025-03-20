@@ -2614,6 +2614,8 @@ MonoBehaviour:
   animator: {fileID: 1875094394}
   enemyHealth: {fileID: 0}
   damage: 2
+  attackSound: {fileID: 8300000, guid: 302282d43796fcd4088823eb73a7ab8d, type: 3}
+  attackVolume: 1
 --- !u!95 &1875094394 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7866092689726311853, guid: cea2506bf5951674cbafeee64cc3e62f, type: 3}
@@ -2837,18 +2839,34 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1875094400}
+    - target: {fileID: 2334109514380567721, guid: cea2506bf5951674cbafeee64cc3e62f, type: 3}
+      propertyPath: arrowFireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fd8f51d6c5571654cb9f982377d121da, type: 3}
+    - target: {fileID: 2334109514380567721, guid: cea2506bf5951674cbafeee64cc3e62f, type: 3}
+      propertyPath: fireSoundVolume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2752140025829716939, guid: cea2506bf5951674cbafeee64cc3e62f, type: 3}
       propertyPath: m_SleepingMode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3072705587303087778, guid: cea2506bf5951674cbafeee64cc3e62f, type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3072705587303087778, guid: cea2506bf5951674cbafeee64cc3e62f, type: 3}
       propertyPath: _hurtSound
       value: 
       objectReference: {fileID: 8300000, guid: 33505081fea40da4c832a76a00d0efc0, type: 3}
+    - target: {fileID: 3072705587303087778, guid: cea2506bf5951674cbafeee64cc3e62f, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 33505081fea40da4c832a76a00d0efc0, type: 3}
+    - target: {fileID: 3072705587303087778, guid: cea2506bf5951674cbafeee64cc3e62f, type: 3}
+      propertyPath: deathSoundVolume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6415378816617706117, guid: cea2506bf5951674cbafeee64cc3e62f, type: 3}
       propertyPath: m_IsActive
       value: 0
