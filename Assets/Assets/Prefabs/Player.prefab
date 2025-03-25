@@ -173,6 +173,8 @@ MonoBehaviour:
   LaunchPoint: {fileID: 6864099258919334732}
   arrowPrefab: {fileID: 7022026458752447818, guid: 1512eb1ddd699684bba40f20c43cecc1, type: 3}
   bowCooldown: 0.5
+  arrowFireSound: {fileID: 8300000, guid: fd8f51d6c5571654cb9f982377d121da, type: 3}
+  fireSoundVolume: 5
   inventory: {fileID: 0}
 --- !u!70 &4440119478858218999
 CapsuleCollider2D:
@@ -223,6 +225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   maxHealth: 1
+  deathSound: {fileID: 8300000, guid: 33505081fea40da4c832a76a00d0efc0, type: 3}
+  deathSoundVolume: 1
 --- !u!1 &6415378816617706117
 GameObject:
   m_ObjectHideFlags: 0

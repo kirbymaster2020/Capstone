@@ -7,6 +7,10 @@ public class PlayerHealth : MonoBehaviour
     public int health;
     public int maxHealth = 10;
 
+    [Header("Sound Settings")]
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private float deathSoundVolume = 1f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +31,12 @@ public class PlayerHealth : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
+
+            if (deathSound != null)
+            {
+                AudioSource.PlayClipAtPoint(deathSound, transform.position, deathSoundVolume);
+            }
+
             Destroy(gameObject);
             Debug.Log(gameObject + " Has been slain.");
 
