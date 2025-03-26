@@ -3,10 +3,16 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float MoveSpeed = 5.0f;
-    
+
     public Rigidbody2D rb;
 
     public Animator animator;
+
+    [Header("Footstep Sound")]
+    [SerializeField] private AudioClip footstepSound;
+    [SerializeField] private float footstepCooldown = 0.3f;
+    private AudioSource audioSource;
+    private float footstepTimer;
 
     Vector2 movement;
 
@@ -24,9 +30,9 @@ public class PlayerMovement : MonoBehaviour
     {
         activeMoveSpeed = MoveSpeed;
         animator.GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
 
-            
     }
 
 
@@ -36,8 +42,8 @@ public class PlayerMovement : MonoBehaviour
     public float moveYAttack;
     void Update()
     {
-       float moveX = Input.GetAxisRaw("Horizontal");
-       float moveY = Input.GetAxisRaw("Vertical");
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
         moveXAttack = moveX;
         moveYAttack = moveY;
 
@@ -50,6 +56,13 @@ public class PlayerMovement : MonoBehaviour
         //input goes here
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        if (movement.sqrMagnitude > 0.01f && footstepTimer <= 0 && dashCounter <= 0)
+        {
+            audioSource.PlayOneShot(footstepSound);
+            footstepTimer = footstepCooldown;
+        }
+        footstepTimer -= Time.deltaTime;
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
@@ -68,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         //movement goes here
         rb.MovePosition(rb.position + movement * activeMoveSpeed * Time.fixedDeltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (dashCooldownCounter <= 0 && dashCounter <= 0)
             {
@@ -84,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
         {
             dashCounter -= Time.deltaTime;
 
-            if (dashCounter <= 0 )
+            if (dashCounter <= 0)
             {
                 activeMoveSpeed = MoveSpeed;
                 dashCooldownCounter = dashCooldown;
@@ -93,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (dashCooldownCounter >  0)
+        if (dashCooldownCounter > 0)
         {
             dashCooldownCounter -= Time.deltaTime;
         }

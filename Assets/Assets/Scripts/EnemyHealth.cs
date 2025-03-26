@@ -7,6 +7,9 @@ public class EnemyHealth : MonoBehaviour
     public int health;
     public int maxHealth = 1;
 
+    [Header("Death Sound")]
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private float deathSoundVolume = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,12 @@ public class EnemyHealth : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
+
+            if (deathSound != null)
+            {
+                AudioSource.PlayClipAtPoint(deathSound, transform.position, deathSoundVolume);
+            }
+
             Destroy(gameObject);
             Debug.Log(gameObject + " Has been slain.");
 
