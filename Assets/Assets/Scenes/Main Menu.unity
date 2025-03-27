@@ -191,7 +191,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 897024791, guid: 3cd7a0ed9ea09934f8c6b497a07ef648, type: 3}
-    m_PressedSprite: {fileID: 897024791, guid: 3cd7a0ed9ea09934f8c6b497a07ef648, type: 3}
+    m_PressedSprite: {fileID: 1446206643, guid: 3cd7a0ed9ea09934f8c6b497a07ef648, type: 3}
     m_SelectedSprite: {fileID: 897024791, guid: 3cd7a0ed9ea09934f8c6b497a07ef648, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -205,10 +205,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1390367189}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 519420033}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: GoToOptionsMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1020,7 +1020,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 897024791, guid: 3cd7a0ed9ea09934f8c6b497a07ef648, type: 3}
-    m_PressedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 1446206643, guid: 3cd7a0ed9ea09934f8c6b497a07ef648, type: 3}
     m_SelectedSprite: {fileID: 897024791, guid: 3cd7a0ed9ea09934f8c6b497a07ef648, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -1260,7 +1260,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 897024791, guid: 3cd7a0ed9ea09934f8c6b497a07ef648, type: 3}
-    m_PressedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 1446206643, guid: 3cd7a0ed9ea09934f8c6b497a07ef648, type: 3}
     m_SelectedSprite: {fileID: 897024791, guid: 3cd7a0ed9ea09934f8c6b497a07ef648, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:

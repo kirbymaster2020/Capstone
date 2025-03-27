@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; // Add this line for scene management
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // You can leave this empty unless you need any updates in the future
+
     }
 
     public void takeDamage(int amount)
@@ -42,10 +43,10 @@ public class PlayerHealth : MonoBehaviour
                 AudioSource.PlayClipAtPoint(deathSound, transform.position, deathSoundVolume);
             }
 
-            Destroy(gameObject);
+            // Go to GameOver scene when health reaches 0
+            SceneManager.LoadScene("GameOver");  // Ensure your GameOver scene is named "GameOver"
             Debug.Log(gameObject + " Has been slain.");
         }
-
     }
 
     // Function to update the UI based on the current health
