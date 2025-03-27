@@ -7,7 +7,7 @@ public class GameOverController : MonoBehaviour
     public void RestartGame()
     {
         Debug.Log("Restarting the game...");
-        SceneManager.LoadScene("TestingScene"); // Make sure your scene is named "TestingScene"
+        SceneManager.LoadScene("Level 1"); // Make sure your scene is named "TestingScene"
     }
 
     // Function to load the MainMenu scene
