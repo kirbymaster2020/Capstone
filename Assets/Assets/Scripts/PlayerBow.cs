@@ -16,6 +16,8 @@ public class PlayerBow : MonoBehaviour
     [SerializeField] private AudioClip arrowFireSound;
     [SerializeField] private float fireSoundVolume = 1f;
 
+    
+
     // Add reference to inventory
     [SerializeField] private Inventory inventory;
 
