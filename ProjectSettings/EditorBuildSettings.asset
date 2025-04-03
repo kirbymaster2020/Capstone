@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets/Scenes/OptionsMenu.unity
     guid: 6a0771ecfb7644c4d84fc38113eab7fd
+  - enabled: 1
+    path: Assets/Assets/Scenes/HowToPLay.unity
+    guid: 65db17744fc031f4b853ebc4648e05da
   m_configObjects: {}
