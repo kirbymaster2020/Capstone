@@ -131,7 +131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Keyboard Extras_1
+      name: ESC
       rect:
         serializedVersion: 2
         x: 39
@@ -792,8 +792,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      ESC: -2140800727
       Keyboard Extras_0: 1407126376
-      Keyboard Extras_1: -2140800727
       Keyboard Extras_11: -1874824291
       Keyboard Extras_12: 1099869251
       Keyboard Extras_13: 868590542
