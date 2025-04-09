@@ -42,7 +42,7 @@ public class CameraZoomController : MonoBehaviour
         float previousZoom = currentZoom;
 
         // Zoom in while Z is held down (decreases orthographic size)
-        if (Input.GetKey(KeyCode.Z))
+        if (Input.GetKey(KeyCode.Q))
         {
             currentZoom -= zoomSpeed * Time.deltaTime;
             // Clamp the zoom to prevent going too far in
@@ -50,7 +50,7 @@ public class CameraZoomController : MonoBehaviour
         }
 
         // Zoom out while X is held down (increases orthographic size)
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKey(KeyCode.E))
         {
             currentZoom += zoomSpeed * Time.deltaTime;
             // Clamp the zoom to prevent going too far out
